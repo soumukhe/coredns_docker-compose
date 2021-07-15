@@ -22,7 +22,7 @@ on the base ubuntu system do the following:
       Defaults can be restored by simply deleting this file.
      
       See resolved.conf(5) for details
-     
+     ```plain
      [Resolve]
      #DNS=
      #FallbackDNS=
@@ -36,7 +36,7 @@ on the base ubuntu system do the following:
      #ReadEtcHosts=yes
      DNS=8.8.8.8
      DNSStubListener=no
-
+    ```
 - sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf       # make a linked file       -sf is symbolic and force
 
 #  Original Readme file below:
