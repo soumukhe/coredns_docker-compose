@@ -41,7 +41,10 @@ on the base ubuntu system do the following:
 #  another good reference: 
    https://dev.to/robbmanes/running-coredns-as-a-dns-server-in-a-container-1d0
    
-# After making changes to the db file please increment serial number for it to take effect.  Alternatively do a "docker-compose restart"   
+# After making changes to the db file:
+please increment serial number for it to take effect.  Alternatively do a "docker-compose restart"   
+
+
 #  Original Readme file below:
 
 [![Docker Hub Build Status](https://img.shields.io/docker/build/burkeazbill/docker-coredns)](https://hub.docker.com/r/burkeazbill/docker-coredns) [![Build Status](https://travis-ci.org/burkeazbill/docker-coredns.svg?branch=master)](https://travis-ci.org/burkeazbill/docker-coredns)[![](https://images.microbadger.com/badges/image/burkeazbill/docker-coredns.svg)](https://microbadger.com/images/burkeazbill/docker-coredns "Get your own image badge on microbadger.com")
