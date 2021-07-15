@@ -11,6 +11,8 @@ $ORIGIN osp.com.
 	3600 IN NS b.iana-servers.net.
 
 undercloud    IN A     192.168.24.1
+gateway       IN A     192.168.24.254
+gateway1      IN CNAME gateway
 
 
 
