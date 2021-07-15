@@ -8,7 +8,8 @@ Modifications made:
 - db.osp.com has A Name, C Name and A Name entries with multiple IP examples
 
 # Some additional notes:
-UDP 53  is used by resolv.comf, so docker container won't be able to map 53:53/udp on base system
+UDP 53  is used by resolv.comf, so docker container won't be able to map 53:53/udp on base system.
+
 reference: https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f
 
 on the base ubuntu system do the following:
