@@ -71,7 +71,7 @@ Next, edit the zone file (db.example.com) or hosts file (example.com.hosts), add
 Once you're done, simply type the following command to run the container in daemon mode (requires docker-compose):
 
 ```plain
-docker-compose up  --build -d
+docker-compose up -d
 
 or 
 
