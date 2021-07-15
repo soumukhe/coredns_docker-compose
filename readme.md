@@ -38,7 +38,10 @@ on the base ubuntu system do the following:
      DNSStubListener=no
     ```
 - sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf       # make a linked file       -sf is symbolic and force
-
+#  another good reference: 
+   https://dev.to/robbmanes/running-coredns-as-a-dns-server-in-a-container-1d0
+   
+   
 #  Original Readme file below:
 
 [![Docker Hub Build Status](https://img.shields.io/docker/build/burkeazbill/docker-coredns)](https://hub.docker.com/r/burkeazbill/docker-coredns) [![Build Status](https://travis-ci.org/burkeazbill/docker-coredns.svg?branch=master)](https://travis-ci.org/burkeazbill/docker-coredns)[![](https://images.microbadger.com/badges/image/burkeazbill/docker-coredns.svg)](https://microbadger.com/images/burkeazbill/docker-coredns "Get your own image badge on microbadger.com")
