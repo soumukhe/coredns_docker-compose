@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+    coredns:
+        build: 
+          context: .
+        container_name: corednsSM
+        image: coredns-sm.image  # name of local image
+        restart: always # other option: on-failure - if you want persistent through host reboots use always
+        expose:
+            - '53'
+            - '53/udp'
+        ports:
+            - '53:53'
+            - '53:53/udp'
+        volumes:
+            - './config:/etc/coredns'
+        networks:
+            - net
+
+networks:
+        net:         
