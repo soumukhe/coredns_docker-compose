@@ -13,6 +13,8 @@ $ORIGIN osp.com.
 undercloud    IN A     192.168.24.1
 gateway       IN A     192.168.24.254
 gateway1      IN CNAME gateway
+record1       IN A      192.168.24.80
+record1       IN A      192.168.24.81
 
 
 
