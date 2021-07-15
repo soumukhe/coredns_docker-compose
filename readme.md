@@ -10,18 +10,18 @@ reference: https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming
 on the base ubuntu system do the following:
 - sudo systemctl stop systemd-resolved
 - vi etc/systemd/resolved.conf and make it look like below (commet all lines except for the last 2):
-     #  This file is part of systemd.
-     #
-     #  systemd is free software; you can redistribute it and/or modify it
-     #  under the terms of the GNU Lesser General Public License as published by
-     #  the Free Software Foundation; either version 2.1 of the License, or
-     #  (at your option) any later version.
-     #
-     # Entries in this file show the compile time defaults.
-     # You can change settings by editing this file.
-     # Defaults can be restored by simply deleting this file.
-     #
-     # See resolved.conf(5) for details
+       This file is part of systemd.
+     
+       systemd is free software; you can redistribute it and/or modify it
+       under the terms of the GNU Lesser General Public License as published by
+       the Free Software Foundation; either version 2.1 of the License, or
+       (at your option) any later version.
+     
+      Entries in this file show the compile time defaults.
+      You can change settings by editing this file.
+      Defaults can be restored by simply deleting this file.
+     
+      See resolved.conf(5) for details
      
      [Resolve]
      #DNS=
