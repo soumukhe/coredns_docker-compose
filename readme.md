@@ -1,4 +1,5 @@
-#  This is a modification from https://github.com/burkeazbill/docker-coredns to suit my purpose
+#  This is a modification from:
+https://github.com/burkeazbill/docker-coredns to suit my purpose
 Modifications made:
 changed docker-compse and Dockerfile a bit
 added a block in Corefile so other domains get resolved by 8.8.8.8 and 9.9.9.9
