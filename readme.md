@@ -69,6 +69,11 @@ Once you're done, simply type the following command to run the container in daem
 
 ```plain
 docker-compose up -d
+
+or 
+
+docker compose build
+docker-compose up -d
 ```
 
 Prefer to simply run docker from the command line? Example shows call for latest image. 
