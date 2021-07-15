@@ -2,8 +2,10 @@
 https://github.com/burkeazbill/docker-coredns to suit my purpose.
 
 Modifications made:
-changed docker-compse and Dockerfile a bit
-added a block in Corefile so other domains get resolved by 8.8.8.8 and 9.9.9.9
+- changed docker-compse and Dockerfile a bit
+- added a block in Corefile so other domains get resolved by 8.8.8.8 and 9.9.9.9
+- also changed domain from example.com to osp.com.  
+- db.osp.com has A Name, C Name and A Name entries with multiple IP examples
 
 # Some additional notes:
 UDP 53  is used by resolv.comf, so docker container won't be able to map 53:53/udp on base system
