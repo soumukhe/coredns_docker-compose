@@ -14,7 +14,7 @@ reference: https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming
 
 on the base ubuntu system do the following:
 - sudo systemctl stop systemd-resolved
-- vi etc/systemd/resolved.conf and make it look like below (commet all lines except for the last 2):
+- vi /etc/systemd/resolved.conf and make it look like below (commet all lines except for the last 2):
        This file is part of systemd.
      
        systemd is free software; you can redistribute it and/or modify it
