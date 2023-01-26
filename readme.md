@@ -139,3 +139,23 @@ example.com.		3600	IN	NS	b.iana-servers.net.
 - [Corefile explained](https://coredns.io/2017/07/23/corefile-explained/)
 - [Quickstart Guide](https://coredns.io/2017/07/24/quick-start/)
 - [Configuration CoreDNS](https://www.alibabacloud.com/help/en/container-service-for-kubernetes/latest/configure-coredns)
+
+```
+Quick steps to install docker & docker-compose on Ubuntu:
+---------------------------------------------------------
+
+sudo -i
+apt-get update && apt-get upgrade -y
+echo net.ipv4.ip_forward=1 >> /etc/sysctl.conf
+sysctl -p
+sudo sysctl --system
+exit
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
+exit # and ssh back in for this to work
+docker --version
+sudo apt install docker-compose -y
+```
