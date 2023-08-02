@@ -174,3 +174,10 @@ Change directory to the config directory.
 
 ![image](https://github.com/soumukhe/coredns_docker-compose/assets/13289754/fbe210d5-b254-4926-b334-aaaab2d83a44)
 
+The final files in that directory should be like shown in the figure below.
+![image](https://github.com/soumukhe/coredns_docker-compose/assets/13289754/cf3c4569-f3ad-4cef-89cf-a55c55b157ac)
+
+now build and bring up the container with the command
+```
+docker-compose up -d
+```
