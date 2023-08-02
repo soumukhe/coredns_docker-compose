@@ -159,3 +159,18 @@ exit # and ssh back in for this to work
 docker --version
 sudo apt install docker-compose -y
 ```
+# Next Steps
+once cloned change directory to "coredns_docker-compose" Here you will see the following.
+
+   - docker-compose.yml
+   - Dockerfile
+   - config directory
+
+Change directory to the config directory. 
+  - vi "Corefile" and change the line  "file /etc/coredns/db.osp.com osp.com" to "file /etc/coredns/db.onprem.com onprem.com"  Here onprem.com is your domain
+  - now rename db.osp.com to db.onprem.com and vi db.onprem.com to put in your DNS records 
+
+📙 Corefile has a line that forwards to /etc/resolv.conf    This is used if there is no entry in db.onprem.com
+
+![image](https://github.com/soumukhe/coredns_docker-compose/assets/13289754/fbe210d5-b254-4926-b334-aaaab2d83a44)
+
