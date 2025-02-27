@@ -23,6 +23,10 @@ sudo systemctl stop systemd-resolved
 sudo systemctl disable systemd-resolved
 ```
 - vi /etc/systemd/resolved.conf and make it look like below (commet all lines except for the last 2):
+
+```bash
+vi /etc/systemd/resolved.conf
+```
        This file is part of systemd.
      
        systemd is free software; you can redistribute it and/or modify it
