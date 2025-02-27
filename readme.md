@@ -181,3 +181,21 @@ now build and bring up the container with the command
 ```
 docker-compose up -d
 ```
+
+# Example Configs:
+
+1. MTU if using vxlan:
+- The figure below shows the configuration for the network interfaces for the Ubuntu VM. Note that ens192 is connected to our EPG and it’s mtu has been set to 1350 (1500 – 100 for IPSec – 50 for VXLan)
+![image](https://github.com/user-attachments/assets/bccf9717-bad2-4c71-9593-fff67e9830ca)
+
+2. db config
+![image](https://github.com/user-attachments/assets/df40ec7b-b723-41a0-ba82-b28f1ba10f0a)
+
+3. Corefile
+![image](https://github.com/user-attachments/assets/653dc98d-3a1b-4279-9abf-b2563612e14f)
+
+4. Example resolv.conf
+![image](https://github.com/user-attachments/assets/9f3ff517-7944-4991-a04b-ab2bb6a608a0)
+
+
+
