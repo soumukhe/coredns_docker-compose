@@ -7,57 +7,7 @@ Modifications made:
 - also changed domain from example.com to osp.com.  
 - db.osp.com has A Name, C Name and A Name entries with multiple IP examples
 
-# Some additional notes:
-UDP 53  is used by resolv.comf, so docker container won't be able to map 53:53/udp on base system.
 
-reference: https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f
-
-on the base ubuntu system do the following:
-- sudo systemctl stop systemd-resolved
-```bash
-sudo systemctl stop systemd-resolved
-```
-
-- sudo systemctl disable systemd-resolved
-```bash
-sudo systemctl disable systemd-resolved
-```
-- vi /etc/systemd/resolved.conf and make it look like below (commet all lines except for the last 2):
-
-```bash
-vi /etc/systemd/resolved.conf
-```
-       This file is part of systemd.
-     
-       systemd is free software; you can redistribute it and/or modify it
-       under the terms of the GNU Lesser General Public License as published by
-       the Free Software Foundation; either version 2.1 of the License, or
-       (at your option) any later version.
-     
-      Entries in this file show the compile time defaults.
-      You can change settings by editing this file.
-      Defaults can be restored by simply deleting this file.
-     
-      See resolved.conf(5) for details
-     ```plain
-     [Resolve]
-     #DNS=
-     #FallbackDNS=
-     #Domains=
-     #LLMNR=no
-     #MulticastDNS=no
-     #DNSSEC=no
-     #DNSOverTLS=no
-     #Cache=no-negative
-     #DNSStubListener=yes
-     #ReadEtcHosts=yes
-     DNS=8.8.8.8
-     DNSStubListener=no
-    ```
-- sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf       # make a linked file       -sf is symbolic and force
-```bash
-sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf 
-```
 #  another good reference: 
    https://dev.to/robbmanes/running-coredns-as-a-dns-server-in-a-container-1d0
    
@@ -211,5 +161,63 @@ docker-compose up -d
 4. Example resolv.conf
 ![image](https://github.com/user-attachments/assets/9f3ff517-7944-4991-a04b-ab2bb6a608a0)
 
+# Need to free up UDP port 53:
+UDP 53  is used by resolv.comf, so docker container won't be able to map 53:53/udp on base system.
 
+reference: https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f
 
+on the base ubuntu system do the following:
+- sudo systemctl stop systemd-resolved
+```bash
+sudo systemctl stop systemd-resolved
+```
+
+- sudo systemctl disable systemd-resolved
+```bash
+sudo systemctl disable systemd-resolved
+```
+- vi /etc/systemd/resolved.conf and make it look like below (commet all lines except for the last 2):
+
+```bash
+vi /etc/systemd/resolved.conf
+```
+       This file is part of systemd.
+     
+       systemd is free software; you can redistribute it and/or modify it
+       under the terms of the GNU Lesser General Public License as published by
+       the Free Software Foundation; either version 2.1 of the License, or
+       (at your option) any later version.
+     
+      Entries in this file show the compile time defaults.
+      You can change settings by editing this file.
+      Defaults can be restored by simply deleting this file.
+     
+      See resolved.conf(5) for details
+     ```plain
+     [Resolve]
+     #DNS=
+     #FallbackDNS=
+     #Domains=
+     #LLMNR=no
+     #MulticastDNS=no
+     #DNSSEC=no
+     #DNSOverTLS=no
+     #Cache=no-negative
+     #DNSStubListener=yes
+     #ReadEtcHosts=yes
+     DNS=8.8.8.8
+     DNSStubListener=no
+    ```
+- sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf       # make a linked file       -sf is symbolic and force
+```bash
+sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf 
+```
+now build and bring up the container with the command
+```
+docker-compose up -d
+```
+## If any changes made to db file
+
+```
+docker-compose restart
+```
