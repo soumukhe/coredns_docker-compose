@@ -212,7 +212,7 @@ vi /etc/systemd/resolved.conf
 ```bash
 sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf 
 ```
-now build and bring up the container with the command
+## now build and bring up the container with the command
 ```
 docker-compose up -d
 ```
