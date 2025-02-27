@@ -145,7 +145,7 @@ now build and bring up the container with the command
 ```
 docker-compose up -d
 ```
-
+---
 # Example Configs:
 
 1. MTU if using vxlan:
@@ -161,7 +161,7 @@ docker-compose up -d
 4. Example resolv.conf
 ![image](https://github.com/user-attachments/assets/9f3ff517-7944-4991-a04b-ab2bb6a608a0)
 
-# Need to free up UDP port 53:
+## Need to free up UDP port 53:
 UDP 53  is used by resolv.comf, so docker container won't be able to map 53:53/udp on base system.
 
 reference: https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f
