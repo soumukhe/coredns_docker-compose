@@ -14,7 +14,14 @@ reference: https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming
 
 on the base ubuntu system do the following:
 - sudo systemctl stop systemd-resolved
+```bash
+sudo systemctl stop systemd-resolved
+```
+
 - sudo systemctl disable systemd-resolved
+```bash
+sudo systemctl disable systemd-resolved
+```
 - vi /etc/systemd/resolved.conf and make it look like below (commet all lines except for the last 2):
        This file is part of systemd.
      
@@ -44,6 +51,9 @@ on the base ubuntu system do the following:
      DNSStubListener=no
     ```
 - sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf       # make a linked file       -sf is symbolic and force
+```bash
+sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf 
+```
 #  another good reference: 
    https://dev.to/robbmanes/running-coredns-as-a-dns-server-in-a-container-1d0
    
